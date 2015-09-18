@@ -1,5 +1,7 @@
 use std::fs::read_dir;
 use std::path::Path;
+use std::sync::atomic::AtomicPtr;
+use std::sync::atomic::Ordering;
 
 pub fn add(first: i32, second: i32) -> i32 {
 	first + second
@@ -29,4 +31,11 @@ fn list_files() {
 			unreachable!();
 		}
 	}
+}
+
+#[test]
+fn atomic_ptr() {
+	let mut pointee = 3i32;
+	let ptr = AtomicPtr::new(&mut pointee);
+	ptr.store(ptr.load(Ordering::Relaxed), Ordering::Relaxed);
 }
