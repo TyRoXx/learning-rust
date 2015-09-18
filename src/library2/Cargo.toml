@@ -1,7 +1,4 @@
 [package]
-name = "learning-rust"
+name = "library2"
 version = "0.1.0"
 authors = ["TyRoXx <tyroxxxx@gmail.com>"]
-
-[dependencies.library2]
-path = "src/library2"

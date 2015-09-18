@@ -1,4 +1,11 @@
 [root]
 name = "learning-rust"
 version = "0.1.0"
+dependencies = [
+ "library2 0.1.0",
+]
+
+[[package]]
+name = "library2"
+version = "0.1.0"
 
